@@ -1,0 +1,24 @@
+.box{
+    font-family: sans-serif;
+    padding: 20px;
+    background-color:
+    #1e306e;
+    align-items: center;
+    min-width: 800px;
+    margin-bottom: 30px;
+    
+
+}
+.contain{
+    border: solid 1px;
+    border-color: red;
+    padding-left: 600px;
+    background-color:beige;
+}
+.file{
+    align-items: center;
+}
+/* .button{
+    border-style:double;
+    border-color: red;
+    } */

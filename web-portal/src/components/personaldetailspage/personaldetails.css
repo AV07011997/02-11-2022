@@ -1,0 +1,32 @@
+.box{
+    font-family: sans-serif;
+    padding: 20px;
+    background-color:
+    #1e306e;
+    align-items: center;
+    min-width: 800px;
+    margin-bottom: 1px;
+    
+
+}
+.container{
+    border: solid 1px;
+    border-color: red;
+    padding-left: 500px;
+    background-color:beige;
+    
+}
+
+
+h2{color: white;
+text-align: center;}
+
+.camp{
+    display: flex;
+}
+
+
+.astrix{
+    color: red;
+    
+}

@@ -1,0 +1,270 @@
+[
+  {
+    "id": 1,
+    "Branch": "MBA- Master of Business Administration"
+  },
+  {
+    "id": 2,
+    "Branch": "MMSc- Master of Management Science"
+  },
+  {
+    "id": 3,
+    "Branch": "MFA- Master of Fine Arts"
+  },
+  {
+    "id": 4,
+    "Branch": "MEM- Master of Event Management"
+  },
+  {
+    "id": 5,
+    "Branch": "MJMC- Master of Journalism and Mass Communication"
+  },
+  {
+    "id": 6,
+    "Branch": "MFD- Master of Fashion Designing"
+  },
+  {
+    "id": 7,
+    "Branch": "MSW- Master of Social Work"
+  },
+  {
+    "id": 8,
+    "Branch": "MMS- Master of Musiness Studies"
+  },
+  {
+    "id": 9,
+    "Branch": "MTTM- Master of Travel and Tourism Management"
+  },
+  {
+    "id": 10,
+    "Branch": "Aviation Courses"
+  },
+  {
+    "id": 11,
+    "Branch": "M.Sc- Interior Design"
+  },
+  {
+    "id": 12,
+    "Branch": "M.Sc.- Hospitality and Hotel Administration"
+  },
+  {
+    "id": 13,
+    "Branch": "Master of Design (M. Design)"
+  },
+  {
+    "id": 14,
+    "Branch": "Master of Performing Arts"
+  },
+  {
+    "id": 15,
+    "Branch": "MA  Advertising"
+  },
+  {
+    "id": 16,
+    "Branch": "MA  Archaeology"
+  },
+  {
+    "id": 17,
+    "Branch": "MA  Cinema Sciences"
+  },
+  {
+    "id": 18,
+    "Branch": "MA  Economics"
+  },
+  {
+    "id": 19,
+    "Branch": "MA  History"
+  },
+  {
+    "id": 20,
+    "Branch": "MA  Journalism"
+  },
+  {
+    "id": 21,
+    "Branch": "MA   Languages"
+  },
+  {
+    "id": 22,
+    "Branch": "MA  Literature"
+  },
+  {
+    "id": 23,
+    "Branch": "MA  Mathematics"
+  },
+  {
+    "id": 24,
+    "Branch": "MA  Music and Fine Arts"
+  },
+  {
+    "id": 25,
+    "Branch": "MA  Philosophy"
+  },
+  {
+    "id": 26,
+    "Branch": "MA  Political Science"
+  },
+  {
+    "id": 27,
+    "Branch": "MA  Psychology"
+  },
+  {
+    "id": 28,
+    "Branch": "MA  PuMlic Administration"
+  },
+  {
+    "id": 29,
+    "Branch": "MA  Computer Science"
+  },
+  {
+    "id": 30,
+    "Branch": "MA  Geography"
+  },
+  {
+    "id": 30,
+    "Branch": "ME/Mtech Aeronautical Engineering"
+  },
+  {
+    "id": 32,
+    "Branch": "ME/Mtech AutomoMile Engineering"
+  },
+  {
+    "id": 33,
+    "Branch": "ME/Mtech Civil Engineering"
+  },
+  {
+    "id": 34,
+    "Branch": "ME/Mtech Computer Science and Engineering"
+  },
+  {
+    "id": 35,
+    "Branch": "ME/Mtech Miotechnology Engineering"
+  },
+  {
+    "id": 36,
+    "Branch": "ME/Mtech Electrical Engineering"
+  },
+  {
+    "id": 37,
+    "Branch": "ME/Mtech Electronics and Communication Engineering"
+  },
+  {
+    "id": 38,
+    "Branch": "ME/Mtech Automation and Robotics"
+  },
+  {
+    "id": 39,
+    "Branch": "ME/Mtech Petroleum Engineering"
+  },
+  {
+    "id": 40,
+    "Branch": "ME/Mtech Instrumentation Engineering"
+  },
+  {
+    "id": 41,
+    "Branch": "ME/Mtech Ceramic Engineering"
+  },
+  {
+    "id": 42,
+    "Branch": "ME/Mtech Chemical Engineering"
+  },
+  {
+    "id": 43,
+    "Branch": "ME/Mtech Structural Engineering"
+  },
+  {
+    "id": 44,
+    "Branch": "ME/Mtech Transportation Engineering"
+  },
+  {
+    "id": 45,
+    "Branch": "ME/Mtech Construction Engineering"
+  },
+  {
+    "id": 46,
+    "Branch": "ME/Mtech Power Engineering"
+  },
+  {
+    "id": 47,
+    "Branch": "ME/Mtech Robotics Engineering"
+  },
+  {
+    "id": 48,
+    "Branch": "ME/Mtech Mechanical Engineering"
+  },
+  {
+    "id": 49,
+    "Branch": "ME/Mtech Textile Engineering"
+  },
+  {
+    "id": 50,
+    "Branch": "ME/Mtech Electronics and Computer Engineering"
+  },
+  {
+    "id": 51,
+    "Branch": "ME/Mtech Smart Manufacturing & Automation"
+  },
+  {
+    "id": 52,
+    "Branch": "M.Com- Master of Commerce"
+  },
+  {
+    "id": 53,
+    "Branch": "MBA- Master of Business Administration"
+  },
+  {
+    "id": 54,
+    "Branch": "M.Com (Hons.)"
+  },
+  {
+    "id": 55,
+    "Branch": "MA (Hons.) in Economics"
+  },
+  {
+    "id": 56,
+    "Branch": "Integrated Law Program- M.Com LL.B."
+  },
+  {
+    "id": 57,
+    "Branch": "M Sc Agriculture"
+  },
+  {
+    "id": 58,
+    "Branch": "M Sc  Biology"
+  },
+  {
+    "id": 59,
+    "Branch": "M Sc  Chemistry"
+  },
+  {
+    "id": 60,
+    "Branch": "M Sc Computer Science"
+  },
+  {
+    "id": 61,
+    "Branch": "M Sc  Environmental Science"
+  },
+  {
+    "id": 62,
+    "Branch": "M Sc  Geography"
+  },
+  {
+    "id": 63,
+    "Branch": "M Sc  Geology"
+  },
+  {
+    "id": 64,
+    "Branch": "M Sc  Information Technology"
+  },
+  {
+    "id": 65,
+    "Branch": "M Sc  Mathematics"
+  },
+  {
+    "id": 66,
+    "Branch": "M Sc  Physics"
+  },
+  {
+    "id": 67,
+    "Branch": "MA  Operations Research"
+  }
+]

@@ -1,0 +1,279 @@
+[
+  {
+    "id": 1,
+    "Branch": "BBA- Bachelor of Business Administration"
+  },
+  {
+    "id": 2,
+    "Branch": "BMS- Bachelor of Management Science"
+  },
+  {
+    "id": 3,
+    "Branch": "BFA- Bachelor of Fine Arts"
+  },
+  {
+    "id": 4,
+    "Branch": "BEM- Bachelor of Event Management"
+  },
+  {
+    "id": 5,
+    "Branch": "BJMC- Bachelor of Journalism and Mass Communication"
+  },
+  {
+    "id": 6,
+    "Branch": "BFD- Bachelor of Fashion Designing"
+  },
+  {
+    "id": 7,
+    "Branch": "BSW- Bachelor of Social Work"
+  },
+  {
+    "id": 8,
+    "Branch": "BBS- Bachelor of Business Studies"
+  },
+  {
+    "id": 9,
+    "Branch": "BTTM- Bachelor of Travel and Tourism Management"
+  },
+  {
+    "id": 10,
+    "Branch": "Aviation Courses"
+  },
+  {
+    "id": 11,
+    "Branch": "B.Sc- Interior Design"
+  },
+  {
+    "id": 12,
+    "Branch": "B.Sc.- Hospitality and Hotel Administration"
+  },
+  {
+    "id": 13,
+    "Branch": "Bachelor of Design (B. Design)"
+  },
+  {
+    "id": 14,
+    "Branch": "Bachelor of Performing Arts"
+  },
+  {
+    "id": 15,
+    "Branch": "BA  Advertising"
+  },
+  {
+    "id": 16,
+    "Branch": "BA  Archaeology"
+  },
+  {
+    "id": 17,
+    "Branch": "BA  Cinema Sciences"
+  },
+  {
+    "id": 18,
+    "Branch": "BA  Economics"
+  },
+  {
+    "id": 19,
+    "Branch": "BA  History"
+  },
+  {
+    "id": 20,
+    "Branch": "BA  Journalism"
+  },
+  {
+    "id": 21,
+    "Branch": "BA   Languages"
+  },
+  {
+    "id": 22,
+    "Branch": "BA  Literature"
+  },
+  {
+    "id": 23,
+    "Branch": "BA  Mathematics"
+  },
+  {
+    "id": 24,
+    "Branch": "BA  Music and Fine Arts"
+  },
+  {
+    "id": 25,
+    "Branch": "BA  Philosophy"
+  },
+  {
+    "id": 26,
+    "Branch": "BA  Political Science"
+  },
+  {
+    "id": 27,
+    "Branch": "BA  Psychology"
+  },
+  {
+    "id": 28,
+    "Branch": "BA  Public Administration"
+  },
+  {
+    "id": 29,
+    "Branch": "BA  Computer Science"
+  },
+  {
+    "id": 30,
+    "Branch": "BA  Geography"
+  },
+  {
+    "id": 30,
+    "Branch": "BE/Btech Aeronautical Engineering"
+  },
+  {
+    "id": 32,
+    "Branch": "BE/Btech Automobile Engineering"
+  },
+  {
+    "id": 33,
+    "Branch": "BE/Btech Civil Engineering"
+  },
+  {
+    "id": 34,
+    "Branch": "BE/Btech Computer Science and Engineering"
+  },
+  {
+    "id": 35,
+    "Branch": "BE/Btech Biotechnology Engineering"
+  },
+  {
+    "id": 36,
+    "Branch": "BE/Btech Electrical and Electronics Engineering"
+  },
+  {
+    "id": 37,
+    "Branch": "BE/Btech Electronics and Communication Engineering"
+  },
+  {
+    "id": 38,
+    "Branch": "BE/Btech Automation and Robotics"
+  },
+  {
+    "id": 39,
+    "Branch": "BE/Btech Petroleum Engineering"
+  },
+  {
+    "id": 40,
+    "Branch": "BE/Btech Instrumentation Engineering"
+  },
+  {
+    "id": 41,
+    "Branch": "BE/Btech Ceramic Engineering"
+  },
+  {
+    "id": 42,
+    "Branch": "BE/Btech Chemical Engineering"
+  },
+  {
+    "id": 43,
+    "Branch": "BE/Btech Structural Engineering"
+  },
+  {
+    "id": 44,
+    "Branch": "BE/Btech Transportation Engineering"
+  },
+  {
+    "id": 45,
+    "Branch": "BE/Btech Construction Engineering"
+  },
+  {
+    "id": 46,
+    "Branch": "BE/Btech Power Engineering"
+  },
+  {
+    "id": 47,
+    "Branch": "BE/Btech Robotics Engineering"
+  },
+  {
+    "id": 48,
+    "Branch": "BE/Btech Textile Engineering"
+  },
+  {
+    "id": 49,
+    "Branch": "BE/Btech Smart Manufacturing & Automation"
+  },
+  {
+    "id": 50,
+    "Branch": "B.Com- Bachelor of Commerce"
+  },
+  {
+    "id": 51,
+    "Branch": "BBA- Bachelor of Business Administration"
+  },
+  {
+    "id": 52,
+    "Branch": "B.Com (Hons.)"
+  },
+  {
+    "id": 53,
+    "Branch": "BA (Hons.) in Economics"
+  },
+  {
+    "id": 54,
+    "Branch": "Integrated Law Program- B.Com LL.B."
+  },
+  {
+    "id": 55,
+    "Branch": "B Sc Agriculture"
+  },
+  {
+    "id": 56,
+    "Branch": "B Sc  Biology"
+  },
+  {
+    "id": 57,
+    "Branch": "B Sc  Chemistry"
+  },
+  {
+    "id": 58,
+    "Branch": "B Sc Computer Science"
+  },
+  {
+    "id": 59,
+    "Branch": "B Sc  Environmental Science"
+  },
+  {
+    "id": 60,
+    "Branch": "B Sc  Geography"
+  },
+  {
+    "id": 61,
+    "Branch": "B Sc  Geology"
+  },
+  {
+    "id": 62,
+    "Branch": "B Sc  Information Technology"
+  },
+  {
+    "id": 63,
+    "Branch": "B Sc  Mathematics"
+  },
+  {
+    "id": 64,
+    "Branch": "B Sc  Physics"
+  },
+  {
+    "id": 65,
+    "Branch": "MBBS"
+  },
+  {
+    "id": 66,
+    "Branch": "BE/Btech Mechanical Engineering"
+  },
+  {
+    "id": 67,
+    "Branch": "BE/Btech Electronics and Computer Engineering"
+  },
+  {
+    "id": 68,
+    "Branch": "B Sc  Operations Research"
+  },
+  {
+    "id": 69,
+    "Branch": "BA Statitics"
+  }
+
+]

@@ -1,0 +1,20 @@
+.box{
+    font-family: sans-serif;
+    padding: 30px;
+    background-color:
+    #1e306e;
+    align-items: center;
+    min-width: 800px;
+    margin-bottom: 50px;
+    
+
+}
+.container{
+    border: solid 1px;
+    border-color: red;
+    padding: 20px;
+    width: 95%;
+    background-color:beige;
+}
+h2{color: white;
+text-align: center;}
