@@ -8,6 +8,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import universitylist from './../universitylist.json';
+import branches from './../branches.json';
+import masterbranches from './../masterbranches.json';
 
 
 const Education = () => {
@@ -36,15 +38,15 @@ const Education = () => {
      
   const saveandnext = () => {
     employee_code = stateemployeecode.employee_code
-    let phd_field=document.getElementById('phd_field').value
-    let phd_research_topic=document.getElementById('phd_research_topic').value
-    let university=document.getElementById('university').value
-    let university_place=document.getElementById('university_place').value
-    let phd_tenure=document.getElementById('phd_tenure').value
-    let pg_branch=document.getElementById('pg_branch').value
-    let pg_degree_university=document.getElementById('pg_degree_university').value
-    let pg_place=document.getElementById('pg_place').value
-    let pg_percentage_cgpa=document.getElementById('pg_percentage_cgpa').value
+    let phd_field=document.getElementById('phd_field')?.value
+    let phd_research_topic=document.getElementById('phd_research_topic')?.value
+    let university=document.getElementById('university')?.value
+    let university_place=document.getElementById('university_place')?.value
+    let phd_tenure=document.getElementById('phd_tenure')?.value
+    let pg_branch=document.getElementById('pg_branch')?.value
+    let pg_degree_university=document.getElementById('pg_degree_university')?.value
+    let pg_place=document.getElementById('pg_place')?.value
+    let pg_percentage_cgpa=document.getElementById('pg_percentage_cgpa')?.value
     let ug_branch=document.getElementById('ug_branch').value
     let ug_university=document.getElementById('ug_university').value
     let ug_place=document.getElementById('ug_place').value
@@ -86,8 +88,8 @@ const skip =()=>{
     return (
         <div>
             <div className="box"><h2 >Employee Education Details</h2></div>
-            <div className="contain">
-            <table>
+            <div className="contain" style={{marginTop: "-1em"}}>
+            <table style={{paddingLeft: "5em"}}>
             <tbody><tr>
                     <td>
                         Employee Code:
@@ -99,10 +101,11 @@ const skip =()=>{
                 </tbody>
                 <tbody><tr>
                     <td>
-                        PHD Field:
+                        Phd Field:
                     </td>
                     <td>
-                    <select name="phd_field"  id="phd_field" value={localdetails?.phd_field}>
+                    <select style={{width: "12em"}} name="phd_field"  id="phd_field" >
+                        <option>{localdetails?.phd_field}</option>
                     <option>Select</option>
                     <option>Humanities</option>
                     <option>Science</option>
@@ -120,10 +123,10 @@ const skip =()=>{
                 </tbody>
                 <tbody><tr>
                     <td>
-                       PHD Research Topic:
+                       Phd Research Topic:
                     </td>
                     <td>
-                    <input type="text" placeholder="Research Topic" name="phd_research_topic"  defaultValue={localdetails?.phd_research_topic} id="phd_research_topic"></input>
+                    <input style={{width: "11.5em"}} type="text" placeholder="Research Topic" name="phd_research_topic"  defaultValue={localdetails?.phd_research_topic} id="phd_research_topic"></input>
                 </td>
                 </tr>
                 </tbody>
@@ -136,7 +139,8 @@ const skip =()=>{
                         <option>Select University</option>
                     
                     </select> */}
-                    <select style={{width: "10em"}}  value={localdetails?.university} id="university" >
+                    <select style={{width: "12em"}}   id="university" >
+                        <option>{localdetails?.university}</option>
 
 <option>University</option>
 
@@ -163,7 +167,8 @@ const skip =()=>{
                         Place:
                     </td>
                     <td>
-                    <select name="university_place"  id="university_place" value={localdetails?.university_place} >
+                    <select style={{width: "12em"}} name="university_place"  id="university_place"  >
+                       <option>{localdetails?.university_place}</option>
                         <option>Place</option>
                         {
                            city.map((getcity,index)=>(
@@ -178,10 +183,11 @@ const skip =()=>{
                 </tbody>
                 <tbody><tr>
                     <td>
-                        PHD Tenure: <br></br><br></br>
+                        Phd Tenure: <br></br><br></br>
                     </td>
                     <td>
-                    <select name="phd_tenure"  id="phd_tenure" value={localdetails?.phd_tenure}>
+                    <select  style={{width: "10em"}} name="phd_tenure"  id="phd_tenure" >
+                        <option>{localdetails?.phd_tenure}</option>
                     <option> 0-3 Years</option>
                     <option>3-4 Years</option>
                     <option>4-5 Years</option>
@@ -197,7 +203,26 @@ const skip =()=>{
                        Master's Branch:
                     </td>
                     <td>
-                    <input type="text" placeholder="Branch Name" name="pg_branch"  id="pg_branch" defaultValue={localdetails?.pg_branch}></input>
+                    {/* <input style={{width: "11.5em"}} type="text" placeholder="Branch Name" name="pg_branch"  id="pg_branch" defaultValue={localdetails?.pg_branch}></input> */}
+                    <select style={{width: "10em"}} type="text" placeholder="Branch Name" name="pg_branch"  id="pg_branch" defaultValue={localdetails?.pg_branch}>
+
+<option>Master Branch</option>
+
+{
+
+   masterbranches.map((getmbranch,index)=>(
+
+    <option value={getmbranch.id} key={index}>{getmbranch.Branch}</option>
+
+   ))
+
+
+
+}
+
+
+
+</select>
                 </td>
                 </tr>
                 </tbody>
@@ -210,7 +235,8 @@ const skip =()=>{
                         <option>Select University</option>
                     
                     </select> */}
-                    <select style={{width: "10em"}}  name="pg_degree_university"  id="pg_degree_university" value={localdetails?.pg_degree_university} >
+                    <select style={{width: "12em"}}  name="pg_degree_university"  id="pg_degree_university"  >
+                        <option>{localdetails?.pg_degree_university}</option>
 
 <option>University</option>
 
@@ -237,7 +263,8 @@ const skip =()=>{
                         Place:
                     </td>
                     <td>
-                    <select name="pg_place"   id="pg_place" value={localdetails?.pg_place}>
+                    <select style={{width: "12em"}} name="pg_place"   id="pg_place">
+                        <option>{localdetails?.pg_place}</option>
                         <option>Place</option>
                         {
                            city.map((getcity,index)=>(
@@ -255,7 +282,7 @@ const skip =()=>{
                        Percentage/CGPA: <br></br><br></br>
                     </td>
                     <td>
-                    <input type="text" placeholder="Enter Percentage or CGPA" name="pg_percentage_cgpa"  id="pg_percentage_cgpa" defaultValue={localdetails?.pg_percentage_cgpa}></input><br></br><br></br>
+                    <input style={{width: "11.5em"}} type="text" placeholder="Enter Percentage or CGPA" name="pg_percentage_cgpa"  id="pg_percentage_cgpa" defaultValue={localdetails?.pg_percentage_cgpa}></input><br></br><br></br>
                 </td>
                 </tr>
                 </tbody>
@@ -264,7 +291,26 @@ const skip =()=>{
                        Undergraduate Branch:
                     </td>
                     <td>
-                    <input type="text" placeholder="Branch Name" name="ug_branch"  id="ug_branch" defaultValue={localdetails?.ug_branch}></input><span className="astrix" >*</span>
+                    {/* <input style={{width: "11.5em"}} type="text" placeholder="Branch Name" name="ug_branch"  id="ug_branch" defaultValue={localdetails?.ug_branch}></input><span className="astrix" >*</span> */}
+                    <select style={{width: "10em"}} type="text" placeholder="Branch Name" name="ug_branch"  id="ug_branch" defaultValue={localdetails?.ug_branch}>
+
+<option>Select Branch</option>
+
+{
+
+   branches.map((getbranch,index)=>(
+
+    <option value={getbranch.id} key={index}>{getbranch.Branch}</option>
+
+   ))
+
+
+
+}
+
+
+
+</select>
                 </td>
                 </tr>
                 </tbody>
@@ -277,7 +323,8 @@ const skip =()=>{
                         <option>Select University</option>
                     
                     </select> */}
-                    <select style={{width: "10em"}} name="ug_university"  id="ug_university" value={localdetails?.ug_university}  >
+                    <select style={{width: "12em"}} name="ug_university"  id="ug_university"  >
+                        <option>{localdetails?.ug_university}</option>
 
 <option>University</option>
 
@@ -304,7 +351,8 @@ const skip =()=>{
                         Place:
                     </td>
                     <td>
-                    <select name="ug_place"  id="ug_place" value={localdetails?.ug_place}>
+                    <select style={{width: "12em"}} name="ug_place"  id="ug_place" >
+                        <option>{localdetails?.ug_place}</option>
                         <option>Place</option>
                         {
                            city.map((getcity,index)=>(
@@ -322,7 +370,7 @@ const skip =()=>{
                        Percentage/CGPA: <br></br><br></br>
                     </td>
                     <td>
-                    <input type="text" placeholder="Enter UG Percentage or CGPA" name="ug_percentage_cgpa" id="ug_percentage_cgpa" defaultValue={localdetails?.ug_percentage_cgpa}></input><span className="astrix" >*</span><br></br><br></br>
+                    <input style={{width: "11.5em"}} type="text" placeholder="Enter UG Percentage or CGPA" name="ug_percentage_cgpa" id="ug_percentage_cgpa" defaultValue={localdetails?.ug_percentage_cgpa}></input><span className="astrix" >*</span><br></br><br></br>
                 </td>
                 </tr>
                 </tbody>
@@ -331,7 +379,8 @@ const skip =()=>{
                        12th Board:
                     </td>
                     <td>
-                    <select name="intermediate_board"   id="intermediate_board" value={localdetails?.intermediate_board}>
+                    <select style={{width: "12em"}} name="intermediate_board"   id="intermediate_board" >
+                        <option>{localdetails?.intermediate_board}</option>
                         <option>State Board</option>
                         <option>CBSE</option>
                         <option>CISCE</option>
@@ -348,11 +397,12 @@ const skip =()=>{
                        If State Board:
                     </td>
                     <td>
-                    <select name="intermediate_state_board_if"  id="intermediate_state_board_if" value={localdetails?.intermediate_state_board_if}>
+                    <select style={{width: "12em"}} name="intermediate_state_board_if"  id="intermediate_state_board_if" >
+                        <option>{localdetails?.intermediate_state_board_if}</option>
                         <option>Select State</option>
                         {
                            state.map((getstate,index)=>(
-                            <option  key={index}>{getstate.name}</option>
+                            <option  key={index}>{getstate.state_name}</option>
                            ))
                             
                         }
@@ -365,7 +415,7 @@ const skip =()=>{
                        School Name:
                     </td>
                     <td>
-                    <input type="text" placeholder="School Name" name="intermediate_school_name"   id="intermediate_school_name" defaultValue={localdetails?.intermediate_school_name}></input><span className="astrix" >*</span>
+                    <input style={{width: "11.5em"}} type="text" placeholder="School Name" name="intermediate_school_name"   id="intermediate_school_name" defaultValue={localdetails?.intermediate_school_name}></input><span className="astrix" >*</span>
                 </td>
                 </tr>
                 </tbody>
@@ -374,7 +424,8 @@ const skip =()=>{
                         Place:
                     </td>
                     <td>
-                    <select name="intermediate_school_place"  id="intermediate_school_place" value={localdetails?.intermediate_school_place}>
+                    <select style={{width: "12em"}} name="intermediate_school_place"  id="intermediate_school_place">
+                        <option>{localdetails?.intermediate_school_place}</option>
                         <option>Place</option>
                         {
                            city.map((getcity,index)=>(
@@ -392,7 +443,7 @@ const skip =()=>{
                        Percentage/CGPA: <br></br><br></br>
                     </td>
                     <td>
-                    <input type="text" placeholder="Enter 12th Percentage or CGPA" name="intermediate_percentage_cgpa"  id="intermediate_percentage_cgpa" defaultValue={localdetails?.intermediate_percentage_cgpa}></input><span className="astrix" >*</span><br></br><br></br>
+                    <input style={{width: "11.5em"}} type="text" placeholder="Enter 12th Percentage or CGPA" name="intermediate_percentage_cgpa"  id="intermediate_percentage_cgpa" defaultValue={localdetails?.intermediate_percentage_cgpa}></input><span className="astrix" >*</span><br></br><br></br>
                 </td>
                 </tr>
                 </tbody>
@@ -401,7 +452,8 @@ const skip =()=>{
                        10th Board:
                     </td>
                     <td>
-                    <select name="matriculation_board"  id="matriculation_board" value={localdetails?.matriculation_board}>
+                    <select style={{width: "12em"}} name="matriculation_board"  id="matriculation_board" >
+                        <option>{localdetails?.matriculation_board}</option>
                         <option>State Board</option>
                         <option>CBSE</option>
                         <option>CISCE</option>
@@ -418,11 +470,11 @@ const skip =()=>{
                        If State Board:
                     </td>
                     <td>
-                    <select name="if_state_board"   id="if_state_board" value={localdetails?.if_state_board}>
-                        <option>Select State</option>
+                    <select style={{width: "12em"}} name="if_state_board"   id="if_state_board" >
+                        <option>{localdetails?.if_state_board}</option>
                         {
                            state.map((getstate,index)=>(
-                            <option  key={index}>{getstate.name}</option>
+                            <option  key={index}>{getstate.state_name}</option>
                            ))
                             
                         }
@@ -435,7 +487,7 @@ const skip =()=>{
                        School Name:
                     </td>
                     <td>
-                    <input type="text" placeholder="School Name" name="matriculation_school_name"  id="matriculation_school_name" defaultValue={localdetails?.matriculation_school_name}></input><span className="astrix" >*</span>
+                    <input style={{width: "11.5em"}} type="text" placeholder="School Name" name="matriculation_school_name"  id="matriculation_school_name" defaultValue={localdetails?.matriculation_school_name}></input><span className="astrix" >*</span>
                 </td>
                 </tr>
                 </tbody>
@@ -444,8 +496,8 @@ const skip =()=>{
                         Place:
                     </td>
                     <td>
-                    <select name="school_place"  id="school_place" value={localdetails?.school_place}>
-                        <option>Place</option>
+                    <select style={{width: "12em"}} name="school_place"  id="school_place">
+                        <option>{localdetails?.school_place}</option>
                         {
                            city.map((getcity,index)=>(
                             <option  key={index}>{getcity.city}</option>
@@ -462,7 +514,7 @@ const skip =()=>{
                        Percentage/CGPA: <br></br><br></br>
                     </td>
                     <td>
-                    <input type="text" placeholder="Enter 10th Percentage or CGPA" name="matriculation_percentage_cgpa"  id="matriculation_percentage_cgpa" defaultValue={localdetails?.matriculation_percentage_cgpa}></input><span className="astrix" >*</span> <br></br><br></br>
+                    <input style={{width: "11.5em"}} type="text" placeholder="Enter 10th Percentage or CGPA" name="matriculation_percentage_cgpa"  id="matriculation_percentage_cgpa" defaultValue={localdetails?.matriculation_percentage_cgpa}></input><span className="astrix" >*</span> <br></br><br></br>
                 </td>
                 </tr>
                 </tbody>

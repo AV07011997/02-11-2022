@@ -1,0 +1,96 @@
+ const[state,setState]= useState([]);
+
+    const[district,setDistrict]=useState([]);
+
+    const[pin,setPin]=useState([]);
+
+    
+
+    function getUnique(a){
+
+
+
+    
+
+    let unique = a.filter((item, i, ar) => ar.indexOf(item) === i);
+
+    return unique;
+
+    }
+
+    function getUniquestate(newpin){
+
+ let temp=[]
+
+ for(let x of newpin){
+
+//    console.log(x) 
+
+temp.push(x.state_name)
+
+
+
+
+ }
+
+ const y=getUnique(temp)
+
+return y
+
+    }
+
+    function getUniquedistricts(newpin,dt){
+
+        let mark=[]
+
+        for(let k of dt){
+
+            mark.push(k.district_name)
+
+        }
+
+        const j=getUnique(mark)
+
+        return j
+
+        
+
+
+
+    }
+
+    
+
+
+
+    useEffect(()=>{
+
+        setState(getUniquestate(newpin));
+
+    })
+
+
+
+    const handleState=(district_id)=> {
+
+        const dt=(newpin.filter(x=>x.state_name==district_id));
+
+        
+
+       
+
+        setDistrict(getUniquedistricts(newpin,dt));
+
+        
+
+    }
+
+    const handleDistrict=(pin_id)=> {
+
+        const kt=(newpin.filter(x=>x.district_name==pin_id));
+
+      
+
+        setPin(kt);
+
+    }

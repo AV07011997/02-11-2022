@@ -160,10 +160,12 @@ else{
    let passport_issue_date=document.getElementById("passport_issue_date").value
    let passport_expiry_date=document.getElementById("passport_expiry_date").value
    let bank_name=document.getElementById("bank_name").value
+   let branch=document.getElementById("branch").value
+
    let bank_account_no=document.getElementById("bank_account_no").value
    let ifsc_code= document.getElementById("ifsc_code").value
 
-   const user={employee_code,aadhar_no,pan_no,passport_no,passport_issue_place,passport_issue_date,passport_expiry_date,bank_name,bank_account_no,ifsc_code}
+   const user={employee_code,aadhar_no,pan_no,passport_no,passport_issue_place,passport_issue_date,passport_expiry_date,bank_name,branch,bank_account_no,ifsc_code}
 
     if( aadhar_no && pan_no && bank_name && bank_account_no && ifsc_code) {
         axios.post("http://localhost:9002/documentation", user)
@@ -193,8 +195,8 @@ const obj={key:"Number",placeholder:"Enter Number"}
     
     <div className="box"><h2 >Employee Documentation Details</h2></div>
 
-<div className="contain">
-<table>
+<div className="contain" style={{marginTop: "-1em"}}>
+<table style={{paddingLeft: "5em"}}>
 <tbody><tr>
                     <td>
                         Employee Code:
@@ -371,7 +373,7 @@ trigger("aadhar");
                         Upload Adhaar:
                     </td>
                     <td>
-                    <input style={{width: "12em"}} type="file"  name="image"  onChange={handleChange} ></input><span className="astrix" >*</span><br></br>
+                    <input style={{width: "12em"}} type="file" accept="application/pdf"  name="image"  onChange={handleChange} ></input><span className="astrix" >*</span><br></br>
                     <div className="button" ><button type="submit" onClick={handleApi} >Upload</button></div>
                     </td>
                     </tr>
@@ -444,7 +446,7 @@ trigger("pan");
                         Upload PAN:
                     </td>
                     <td>
-                    <input style={{width: "12em"}} type="file"  name="pan_card" accept="pdf" onChange={handleChange1} ></input><span className="astrix" >*</span><br></br>
+                    <input style={{width: "12em"}} type="file" accept="application/pdf" name="pan_card"  onChange={handleChange1} ></input><span className="astrix" >*</span><br></br>
                     <div className="button" ><button type="submit" onClick={handleApi1} >Upload</button></div>
                     </td>
                     </tr>
@@ -564,6 +566,13 @@ trigger("passport");
                 </td>
                 </tr>
                 </tbody>
+                <tbody><tr>
+                    <td>Branch</td>
+                    <td>
+                    <input style={{width: "12em"}} type="text" placeholder="Bank branch"  defaultValue={localdetails?.branch} name="branch" id="branch"></input><span className="astrix" >*</span><br></br>
+
+                    </td>
+                    </tr></tbody>
                 
                 <tbody><tr>
                     <td>

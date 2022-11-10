@@ -1,0 +1,66 @@
+.box{
+    font-family: sans-serif;
+    padding: 20px;
+    background-color:
+    #1e306e;
+    align-items: center;
+    min-width: 800px;
+    margin-bottom: 40px;
+    
+
+}
+.person{
+    border: solid 1px;
+    border-color: red;
+    padding-left: 500px;
+    background-color:beige;
+    margin-top: -1em;
+
+    
+}
+.heading{
+    align-items: center;
+    font-family: Georgia;
+    background-color: blue;
+    text-decoration-color: aquamarine;
+  
+
+}
+.document{
+    border: solid 1px;
+    border-color: red;
+    padding-left: 500px;
+    background-color:beige;
+    margin-top: 1em;
+
+}
+.education{
+    border: solid 1px;
+    border-color: red;
+    padding-left: 500px;
+    background-color:beige;
+    margin-top: 1em;
+
+}
+.office{
+    border: solid 1px;
+    border-color: red;
+    padding-left: 500px;
+    background-color:beige;
+    margin-top: 1em;
+
+}
+.prevemp{
+    border: solid 1px;
+    border-color: red;
+    padding-left: 500px;
+    background-color:beige;
+    margin-top: 1em;
+
+}
+h2{color: white;
+text-align: center;}
+
+.table1{
+    width: 50em;
+}

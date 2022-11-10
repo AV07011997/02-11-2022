@@ -30,3 +30,6 @@ text-align: center;}
     color: red;
     
 }
+::placeholder{
+    color: #009879;
+}

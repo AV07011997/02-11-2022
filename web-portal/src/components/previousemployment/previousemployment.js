@@ -70,37 +70,72 @@ const Previousemployment = () => {
         }
     },[])
      
-  const saveandnext = () => {
-    employee_code=stateemployeecode.employee_code
-    // let last_company_name1=document?.getElementById('last_company_name1').value
-    // let designation1=document?.getElementById('designation1').value
-    // let doj1=document.getElementById('doj1').value
-    // let dol1=document.getElementById('dol1').value
-    // let last_company_name2=document.getElementById('last_company_name2').value
-    // let designation2=document.getElementById('designation2').value
-    // let doj2=document.getElementById('doj2').value
-    // let dol2=document.getElementById('last_company_name1').value
-    // let last_company_name3=document.getElementById('last_company_name3').value
-    // let designation3=document.getElementById('last_company_name1').value
-    // let doj3=document.getElementById('doj3').value
-    // let dol3=document.getElementById('dol3').value
-    // let last_company_name4=document.getElementById('last_company_name4').value
-    // let designation4=document.getElementById('designation4').value
-    // let doj4=document.getElementById('doj4').value
-    // let dol4=document.getElementById('last_company_name1').value
+  const Finish = () => {
 
-    // let last_company_name5=document.getElementById('last_company_name5').value
-    // let designation5=document.getElementById('designation5').value
-    // let doj5=document.getElementById('doj5').value
-    // let dol5=document.getElementById('dol5').value
-    // const user={employee_code,last_company_name1,designation1,doj1,dol1, last_company_name2, designation2,doj2,dol2, last_company_name3,designation3,
-    //     doj3,dol3,last_company_name4,designation4, doj4,dol4,last_company_name5,designation5,doj5,dol5}
-    const user={}
+    employee_code=stateemployeecode.employee_code
+    let no_of_row=document.getElementById('no_of_row')?.value
+    let last_company_name1,last_company_name2,last_company_name3,last_company_name4,last_company_name5,last_company_name6,last_company_name7,last_company_name8,last_company_name9,last_company_name10,designation1,designation2,designation3,designation4,designation5,designation6,designation7,designation8,designation9,designation10,doj1,doj2,doj3,doj4,doj5,doj6,doj7,doj8,doj9,doj10,dol1,dol2,dol3,dol4,dol5,dol6,dol7,dol8,dol9,dol10;
+  
+    last_company_name1=document.getElementById('last_company_name1')?.value
+    doj1=document?.getElementById('doj1')?.value
+    dol1=document.getElementById('dol1')?.value
+    
+    last_company_name2=document.getElementById('last_company_name2')?.value
+    designation2=document.getElementById('designation2')?.value
+    doj2=document.getElementById('doj2')?.value
+    dol2=document.getElementById('last_company_name1')?.value
+       
+    last_company_name3=document.getElementById('last_company_name3')?.value
+    designation3=document.getElementById('last_company_name1')?.value
+    doj3=document.getElementById('doj3')?.value
+    dol3=document.getElementById('dol3')?.value
+    last_company_name4=document.getElementById('last_company_name4')?.value
+    designation4=document.getElementById('designation4')?.value
+    doj4=document.getElementById('doj4')?.value
+    dol4=document.getElementById('last_company_name1')?.value
+
+    last_company_name5=document.getElementById('last_company_name5')?.value
+    designation5=document.getElementById('designation5')?.value
+    doj5=document.getElementById('doj5')?.value
+    dol5=document.getElementById('dol5')?.value
+
+    last_company_name6=document.getElementById('last_company_name6')?.value
+    designation6=document.getElementById('designation6')?.value
+    doj6=document.getElementById('doj6')?.value
+    dol6=document.getElementById('dol6')?.value
+         
+    last_company_name7=document.getElementById('last_company_name7')?.value
+    designation7=document.getElementById('designation7')?.value
+    doj7=document.getElementById('doj7')?.value
+    dol7=document.getElementById('dol7')?.value
+    
+    last_company_name8=document.getElementById('last_company_name8')?.value
+    designation8=document.getElementById('designation8')?.value
+    doj8=document.getElementById('doj8')?.value
+    dol8=document.getElementById('dol8')?.value
+
+    last_company_name9=document.getElementById('last_company_name9')?.value
+    designation9=document.getElementById('designation9')?.value
+    doj9=document.getElementById('doj9')?.value
+    dol9=document.getElementById('dol9')?.value
+
+    last_company_name10=document.getElementById('last_company_name10')?.value
+    designation10=document.getElementById('designation10')?.value
+    doj10=document.getElementById('doj10')?.value
+    dol10=document.getElementById('dol10')?.valu10
+
+
+   
+
+    const user={employee_code,no_of_row,last_company_name1,last_company_name2,last_company_name3,last_company_name4,last_company_name5,last_company_name6,last_company_name7,last_company_name8,last_company_name9,last_company_name10,designation1,designation2,designation3,designation4,designation5,designation6,designation7,designation8,designation9,designation10,doj1,doj2,doj3,doj4,doj5,doj6,doj7,doj8,doj9,doj10,dol1,dol2,dol3,dol4,dol5,dol6,dol7,dol8,dol9,dol10}
+    console.log(user)
         axios.post("http://localhost:9002/previousemployment", user)
         .then( res => {
+
             alert(res.data.message)
             navigate("/")
-                 })
+            
+        })
         // console.log(user)
    
     
@@ -114,17 +149,17 @@ const skip =()=>{
     return (
         <div>
     <div className="box"><h2 >Employee Previous Employment Details</h2></div>
-        <div className="concat">
-            <table>
+        <div className="concat" style={{marginTop: "-1em"}}>
+            <table style={{paddingLeft: "4.5em"}}>
             <tbody><tr>
                     <td>
                        Select number of experience you want to add:
                     </td>
                     <td>
                         <div >
-                        <select  name="no_of_row" id="no_of_row" onChange={(e)=>{handleshowhide(e)}}>
+                        <select   name="no_of_row" id="no_of_row" onChange={(e)=>{handleshowhide(e)}}>
                         {/* <option style={{color:"red"}}>{localdetails?.blood_group}</option> */}
-                    <option>select</option>
+                    <option>{localdetails?.no_of_row}</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -3207,7 +3242,7 @@ const skip =()=>{
                 <td>
             <div className="camp">
             <div ><button type="submit" onClick={skip}>Skip</button></div>&nbsp;&nbsp;
-            <div ><button type="submit" onClick={saveandnext}>Finish</button></div>
+            <div ><button type="submit" onClick={Finish}>Finish</button></div>
              </div>
              </td>
                 </tr>

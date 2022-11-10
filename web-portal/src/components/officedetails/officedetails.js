@@ -40,11 +40,11 @@ const Office = () => {
     let doj=document.getElementById('doj').value
     let office_location=document.getElementById('office_location').value
     let official_email_id=document.getElementById('official_email_id').value
-    // let reference_person_name=document.getElementById('reference_person_name').value
+    let reference_person_name=document.getElementById('reference_person_name').value
     let designation_of_person=document.getElementById('designation_of_person').value
     let how_do_you_know_about_this_job=document.getElementById('how_do_you_know_about_this_job').value
 
-    const user= { employee_code,designation,doj,office_location,official_email_id,designation_of_person,how_do_you_know_about_this_job}
+    const user= { reference_person_name,employee_code,designation,doj,office_location,official_email_id,designation_of_person,how_do_you_know_about_this_job}
     if(designation && doj && office_location){
         axios.post("http://localhost:9002/officedetails", user)
         .then( res => {
@@ -72,8 +72,8 @@ const skip =()=>{
         <div>
             
     <div className="box"><h2 >Employee Office Details</h2></div>
-        <div className="concat">
-            <table>
+        <div className="concat" style={{marginTop: "-1em"}}>
+            <table style={{paddingLeft: "6em"}}>
             <tbody><tr>
                     <td>
                         Employee Code:
@@ -88,8 +88,8 @@ const skip =()=>{
                        Designation:
                     </td>
                     <td>
-                        <select style={{width: "15em"}} name="designation"  id="designation">
-                        <option style={{color:"red"}}>{localdetails?.designation}</option>    
+                        <select style={{width: "12em"}} name="designation"  id="designation">
+                        <option style={{color:"red"}}>  {localdetails?.designation}</option>    
                         <option>Designation</option>
                     <option>Business Analyst</option>
                     <option>Web Developer</option>
@@ -112,8 +112,7 @@ const skip =()=>{
                        DOJ:
                     </td>
                     <td>
-                    <input style={{width: "15em"}} type="date" name="doj"  defaultValue={localdetails?.doj} id="doj"></input><span className="astrix" >*</span>
-                </td>
+                    <input style={{width: "11.5em"}} type="date" name="doj"  defaultValue={localdetails?.doj} id="doj"></input><span className="astrix" >*</span>                </td>
                 </tr>
                 </tbody>
                 <tbody><tr>
@@ -121,9 +120,9 @@ const skip =()=>{
                        Office Location:
                     </td>
                     <td>
-                        <select style={{width: "15em"}} name="office_location"   id="office_location">
-                        <option style={{color:"red"}}>{localdetails?.office_location}</option>
-                        <option>Select</option>
+                        <select style={{width: "12em"}} name="office_location"   id="office_location">
+                        <option style={{color:"red"}}>  {localdetails?.office_location}</option>
+                        
                     <option>Noida</option>
                     <option>Mumbai</option>
                     <option>Bangalore</option>
@@ -142,7 +141,7 @@ const skip =()=>{
 <label className="col-form-label">Official Email ID:</label>
 
 
-<td> <input style={{width: "12em"}} name="official_email_id"  defaultValue={localdetails?.official_email_id} id="official_email_id"
+<td> <input style={{width: "11.5em"}} name="official_email_id"  defaultValue={localdetails?.official_email_id} id="official_email_id"
 type="email" placeholder="fname.lname@dhurin.in"
 className={`form-control ${errors.email && "invalid"}`}
 {...register("email", { required: "Required" ,
@@ -164,22 +163,22 @@ trigger("email");
                 </tr>
                 </tbody>
                 <tbody><tr>
-                    {/* <td>
-                       Reference Person Name:
+                    <td>
+                       Reporting manager name:
                     </td>
                     <td>
-                    <input style={{width: "15em"}} type="text" placeholder="Name of Person who referred you" name="reference_person_name" defaultValue={localdetails?.reference_person_name} id="reference_person_name"></input>
-                </td> */}
+                    <input style={{width: "15em"}} type="text" placeholder="Name of reporting manager" name="reference_person_name" defaultValue={localdetails?.reference_person_name} id="reference_person_name"></input>
+                </td>
 
                 </tr>
                 </tbody>
                 <tbody><tr>
                 <td>
-                       Designation of the Person:
+                       Designation of reporting manager:
                     </td>
                     <td>
-                        <select style={{width: "15em"}} name="designation_of_person"   id="designation_of_person">
-                        <option style={{color:"red"}}>{localdetails?.designation_of_person}</option>
+                        <select style={{width: "12em"}} name="designation_of_person"   id="designation_of_person">
+                        <option style={{color:"red"}}>  {localdetails?.designation_of_person}</option>
                     <option>Business Analyst</option>
                     <option>Web Developer</option>
                     <option>Data Engineer</option>
@@ -202,7 +201,7 @@ trigger("email");
                     know about this job:<br></br><br></br>
                 </td>
                 <td>
-                <textarea rows="3" cols="50" placeholder="eg friends relatives colleagues etc" name="how_do_you_know_about_this_job"  defaultValue={localdetails?.how_do_you_know_about_this_job} id="how_do_you_know_about_this_job"></textarea><br></br>
+                <textarea rows="2" cols="30" placeholder="eg friends relatives colleagues etc" name="how_do_you_know_about_this_job"  defaultValue={localdetails?.how_do_you_know_about_this_job} id="how_do_you_know_about_this_job"></textarea><br></br>
             </td>
             </tr>
             </tbody>

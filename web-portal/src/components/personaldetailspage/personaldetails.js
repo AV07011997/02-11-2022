@@ -10,6 +10,7 @@ import disability from "./../disability.json"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import newpin from "./../newpin.json"
+import { checks } from "../checksutility/checks";
 
 
 
@@ -255,16 +256,15 @@ const Personaldetails = ({}) => {
         //              })
 
 
-        let contact_number,personal_email_id,emergency_contact_number;
+        let contact_number,personal_email_id,emergency_contact_number,emergency_contact_number2;
         if(stateemployeecode['employee_code']){
             employee_code=stateemployeecode['employee_code']
         }
         else{
-            employee_code=document.getElementById('employee_code').value
+            employee_code=document.getElementById('employee_code')?.value
         }
         
-        employee_code=document.getElementById('employee_code').value
-        console.log(employee_code)
+       
 
         if(errors.mobile){
             alert('enter valid personal mobile number')
@@ -284,9 +284,18 @@ const Personaldetails = ({}) => {
             alert('enter valid emergency contact number')
         }
         else{
-        emergency_contact_number=document.getElementById('emergency_contact_number').value
+            emergency_contact_number=document.getElementById('emergency_contact_number').value
+    
+            }
+        if(errors.emergency_contact_number2){
+            alert('enter valid emergency contact number2')  
+        }
+        else{
+            emergency_contact_number2=document.getElementById('emergency_contact_number2').value
 
         }
+        let employement_type=document.getElementById('employement_type').value
+        
         let full_name=document.getElementById('full_name').value
         let gender=document.getElementById('gender').value
         let marital_status=document.getElementById('marital_status').value
@@ -308,6 +317,9 @@ const Personaldetails = ({}) => {
         let relationship=document.getElementById('relationship').value
         let Type_relationship=document.getElementById('Type_relationship')?.value
         let disability=document.getElementById('disability').value
+        let emergency_contact_person2=document.getElementById('emergency_contact_person2').value
+        let relationship2=document.getElementById('relationship2').value
+        let Type_relationship2=document.getElementById('Type_relationship2')?.value
         let disability_type=document.getElementById('disability_type')?.value
         let other_disability_type=document.getElementById('other_disability_type')?.value
 
@@ -320,8 +332,8 @@ const Personaldetails = ({}) => {
         // var full_name=document.getElementsByName('full_name')
         // // console.log(full_name)
       
-        const user={employee_code,full_name,gender,marital_status,fathers_name,mothers_name,contact_number,personal_email_id,dob,blood_group,permanent_address,state_permanent,district_permanent,pincode_permanent,current_address,state_current,district_current,pincode_current,skype_id,linked_handle,emergency_contact_person,relationship,Type_relationship,emergency_contact_number,disability}
-    
+        const user={emergency_contact_number2,emergency_contact_person2,relationship2,Type_relationship2,employee_code,employement_type,full_name,gender,marital_status,fathers_name,mothers_name,contact_number,personal_email_id,dob,blood_group,permanent_address,state_permanent,district_permanent,pincode_permanent,current_address,state_current,district_current,pincode_current,skype_id,linked_handle,emergency_contact_person,relationship,Type_relationship,emergency_contact_number,disability}
+      console.log(user)
         if(employee_code && full_name && gender && marital_status && fathers_name && mothers_name && contact_number && personal_email_id && dob && blood_group && permanent_address && state_permanent && district_permanent && pincode_permanent && current_address && state_current && district_current && pincode_current  && linked_handle && emergency_contact_person && relationship && emergency_contact_number && disability){
             axios.post("http://localhost:9002/personaldetails", user)
             .then( res => {
@@ -363,11 +375,11 @@ const Personaldetails = ({}) => {
     return (
         <div>
         <div className="box"><h2>Employee Personal Details</h2></div>
-        <div className="container">
+        <div className="container" style={{width:"91.3em",marginTop:"-1em"}}>
           {/* {console.log(stateemployeecode)}   */}
             
-               <table>
-               { stateemployeecode['employee_code']===undefined &&(<div style={{paddingLeft: "119px"}}>
+               <table style={{paddingLeft:"28em"}}>
+               { stateemployeecode['employee_code']===undefined &&(
                <tbody><tr>
                     <td>
                        Employee Code:
@@ -377,8 +389,8 @@ const Personaldetails = ({}) => {
                 </td>
                 </tr>
                 </tbody>
-                </div>)}
-                { stateemployeecode['employee_code']  &&(<div style={{paddingLeft: "119px"}} >
+                )}
+                { stateemployeecode['employee_code']  &&(
                <tbody><tr>
                     <td>
                        Employee Code:
@@ -388,7 +400,30 @@ const Personaldetails = ({}) => {
                 </td>
                 </tr>
                 </tbody>
-                </div>)}
+                )}
+
+                <tbody><tr>
+                    <td>
+                        Employemnt type:
+                    </td>
+                    <td>
+                    <div >
+                        <select    id="employement_type">
+                        <option style={{color:"red"}}>{localdetails?.employement_type}</option>
+                     
+                    <option>Employee</option>
+                    <option>Contractor</option>
+                    <option>Intern</option>
+
+                   
+                    
+                </select><span className="astrix" >*</span>
+                
+                </div>
+                </td>
+                </tr>
+                </tbody>
+                
                 
                
                
@@ -398,7 +433,7 @@ const Personaldetails = ({}) => {
                     </td>
                     {/* {console.log(localdetails?.full_name)} */}
                     <td>
-                    <input  type="text"  defaultValue={localdetails?.full_name}    placeholder="Name" name="full_name" id="full_name"></input><span className="astrix" >*</span>
+                    <input style={{width: "12em"}} type="text"  defaultValue={localdetails?.full_name}    placeholder="Name" name="full_name" id="full_name"></input><span className="astrix" >*</span>
                 </td>
                 </tr>
                 </tbody>
@@ -410,8 +445,8 @@ const Personaldetails = ({}) => {
                     <td>
                     <div >
                         <select   name="gender" id="gender">
-                        <option style={{color:"red"}}>{localdetails?.gender}</option>
-                        <option>Gender</option>
+                        <option style={{color:"red"}}> {localdetails?.gender}</option>
+                        
                     <option>Male</option>
                     <option>Female</option>
                     <option>Others</option>
@@ -429,8 +464,8 @@ const Personaldetails = ({}) => {
                     <td>
                     <div >
                         <select    name="marital_status" id="marital_status">
-                        <option style={{color:"red"}}>{localdetails?.marital_status}</option>
-                        <option>Marital status</option>
+                        <option style={{color:"red"}}>  {localdetails?.marital_status}</option>
+                        
                     <option>Married</option>
                     <option>Unmarried</option>
                    
@@ -447,7 +482,7 @@ const Personaldetails = ({}) => {
                        Father's Name:
                     </td>
                     <td>
-                    <input type="text" defaultValue={localdetails?.fathers_name}     placeholder="Name" name="fathers_name" id="fathers_name"></input><span className="astrix" >*</span>
+                    <input style={{width: "12em"}} type="text" defaultValue={localdetails?.fathers_name}     placeholder="Name" name="fathers_name" id="fathers_name"></input><span className="astrix" >*</span>
                 </td>
                 </tr>
                 </tbody>
@@ -456,7 +491,7 @@ const Personaldetails = ({}) => {
                        Mother's Name:
                     </td>
                     <td>
-                    <input type="text" defaultValue={localdetails?.mothers_name}   placeholder="Name" name="mothers_name" id="mothers_name"></input><span className="astrix" >*</span>
+                    <input style={{width: "12em"}} type="text" defaultValue={localdetails?.mothers_name}   placeholder="Name" name="mothers_name" id="mothers_name"></input><span className="astrix" >*</span>
                 </td>
                 </tr>
                 </tbody>
@@ -545,8 +580,9 @@ trigger("phone");
                  className={`form-control ${errors.email && "invalid"}`}
                  {...register("email", { required: "Required" ,
                  pattern: {
-                   value:   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-                   message: "Invalid email address",
+                //    value:   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                value: /^[a-z0-9](\.?[a-z0-9]){5,}@(gmail|yahoo|outlook|dhurin)\.\w{2,3}$/,
+                   message: "Please check your domain name",
                  }})}
                  onKeyUp={() => {
                    trigger("email");
@@ -567,7 +603,7 @@ trigger("phone");
                        DOB:
                     </td>
                     <td>
-                    <input type="date"defaultValue={localdetails?.dob}    name="dob" id="dob"></input><span className="astrix" >*</span>
+                    <input style={{width: "12em"}} type="date"defaultValue={localdetails?.dob}    name="dob" id="dob"></input><span className="astrix" >*</span>
                 </td>
                 </tr>
                 </tbody>
@@ -577,8 +613,8 @@ trigger("phone");
                     </td>
                     <td>
                         <div >
-                        <select   value={localdetails?.blood_group} name="blood_group" id="blood_group">
-                        <option style={{color:"red"}}>{localdetails?.blood_group}</option>
+                        <select  style={{width: "6em"}} value={localdetails?.blood_group} name="blood_group" id="blood_group">
+                        <option style={{color:"red"}}> {localdetails?.blood_group}</option>
                     <option>A+</option>
                     <option>A-</option>
                     <option>B+</option>
@@ -608,15 +644,13 @@ trigger("phone");
                     </td>
                     <td>
                         <div >
-                    <select   id="state_permanent" name="state_permanent" onChange={(e)=>handleState(e.target.value)}>
-                    {/* <option >select state</option> */}
-                    <option style={{color:"red"}}>{localdetails?.state_permanent}</option>
+                    <select style={{width: "12em"}}  id="state_permanent" name="state_permanent" onChange={(e)=>handleState(e.target.value)}>
+                  
                     
+                    <option  style={{color:"red"}}>{localdetails?.state_permanent}</option>
                         
                         {
-                        //    state.map((getstate,index)=>(
-                        //     <option value={getstate.state_id} key={index}>{getstate.state_name}</option>
-                        //    ))
+                       
                         (state?.map((getst,index)=>(
 
                             <option value={getst} key={index}>{getst}</option>
@@ -635,7 +669,7 @@ trigger("phone");
                         District:
                     </td>
                     <td>
-                    <select value={localdetails?.district_permanent} style={{width: "12em"}} onChange={(e)=>handleDistrict(e.target.value)} id="district_permanent">
+                    <select  style={{width: "12em"}} onChange={(e)=>handleDistrict(e.target.value)} id="district_permanent">
                         {/* <option>Select District</option> */}
                         <option style={{color:"red"}}>{localdetails?.district_permanent}</option>
 
@@ -662,7 +696,7 @@ trigger("phone");
                     {/* <input type="text" defaultValue={localdetails?.pincode_permanent} placeholder="Enter your hometown pincode" id="pincode_permanent" name="pincode_permanent"></input><span className="astrix" >*</span><br></br><br></br> */}
                     <select  style={{width: "12em"}}  id="pincode_permanent">
 
-<option>Select Pincode</option>
+<option>{localdetails?.pincode_permanent}</option>
 
 {
 
@@ -676,7 +710,7 @@ trigger("phone");
 
 }
 
-</select>
+</select><br></br><br></br>
                 </td>
                 </tr>
                 </tbody>
@@ -688,7 +722,8 @@ trigger("phone");
                    onChange={addressFunction}
                     />
             <label>
-           If permanent address same as current address:
+           Is permanent address<br></br>
+            same as current address:
           </label>
                 </td>
                 </tr>
@@ -708,8 +743,8 @@ trigger("phone");
                         State:
                     </td>
                     <td>
-                    <select value={localdetails?.state_current} name="state_current" id="state_current" onChange={(e)=>handleState(e.target.value)}>
-                        <option>Select State</option>
+                    <select  style={{width: "12em"}}  name="state_current" id="state_current" onChange={(e)=>handleState(e.target.value)}>
+                        <option>{localdetails?.state_current}</option>
                         {
                         //    state?.map((getstate,index)=>(
                         //     <option value={getstate.state_id} key={index}>{getstate.state_name}</option>
@@ -732,8 +767,8 @@ trigger("phone");
                     </td>
                     <td>
                     {/* <input type="text" placeholder="District Name" id="district_current" name="district_current"></input> */}
-                    <select value={localdetails?.district_current} style={{width: "12em"}} onChange={(e)=>handleDistrict(e.target.value)} id="district_current">
-                        <option>Select District</option>
+                    <select  style={{width: "12em"}}   onChange={(e)=>handleDistrict(e.target.value)} id="district_current">
+                        <option>{localdetails?.district_current}</option>
                         {
                         //     district?.map((getdistrict,index)=>(
                         //     <option value={getdistrict.district_id} key={index}>{getdistrict.district_name}</option>
@@ -758,7 +793,7 @@ trigger("phone");
                     {/* <input type="text" defaultValue={localdetails?.pincode_current} placeholder="Enter your current city pincode" id="pincode_current" name="pincode_current"></input><span className="astrix" >*</span><br></br><br></br> */}
                     <select  style={{width: "12em"}} id="pincode_current" >
 
-<option>Select Pincode</option>
+<option>{localdetails?.pincode_current}</option>
 
 {
 
@@ -773,6 +808,7 @@ trigger("phone");
 }
 
 </select>
+<br></br><br></br>
                 </td>
                 </tr>
                 </tbody>
@@ -781,7 +817,7 @@ trigger("phone");
                        Skype ID:
                     </td>
                     <td>
-                    <input type="ID"  defaultValue={localdetails?.skype_id} placeholder="Unique Skype NAME" id="skype_id" name="skype_id"></input>
+                    <input style={{width: "12em"}} type="ID"  defaultValue={localdetails?.skype_id} placeholder="Unique Skype NAME" id="skype_id" name="skype_id"></input>
                 </td>
                 </tr>
                 </tbody>
@@ -790,27 +826,27 @@ trigger("phone");
                        Linkedin Handle:
                     </td>
                     <td>
-                    <input type="text" defaultValue={localdetails?.linked_handle} placeholder="Your custom linkedin URL" id="linked_handle" name="linked_handle"></input><span className="astrix" >*</span>
+                    <input style={{width: "12em"}}  type="text" defaultValue={localdetails?.linked_handle} placeholder="Your custom linkedin URL" id="linked_handle" name="linked_handle"></input><span className="astrix" >*</span>
                 </td>
                 </tr>
                 </tbody>
                 <tbody><tr>
                     <td>
-                       Emergency Contact Person:
+                       Emergency Contact Person(1):
                     </td>
                     <td>
-                    <input type="text" defaultValue={localdetails?.emergency_contact_person} placeholder="Name of the person" id="emergency_contact_person" name="emergency_contact_person"></input><span className="astrix" >*</span>
+                    <input style={{width: "12em"}} type="text" defaultValue={localdetails?.emergency_contact_person} placeholder="Name of the person" id="emergency_contact_person" name="emergency_contact_person"></input><span className="astrix" >*</span>
                 </td>
                 </tr>
                 </tbody>
                 <tbody><tr>
                     <td>
-                       Relationship:
+                       Relationship(1):
                     </td>
                     <td>
-                        <select name="relationship" value={localdetails?.relationship} id="relationship" onChange={(e)=>{handleshowhide2(e)}}>
-                        <option style={{color:"red"}}>{localdetails?.relationship}</option>
-                        <option>Select</option>
+                        <select style={{width: "12em"}} name="relationship" value={localdetails?.relationship} id="relationship" onChange={(e)=>{handleshowhide2(e)}}>
+                        <option style={{color:"red"}}> {localdetails?.relationship}</option>
+                        
                         <option>Father</option>
 
 <option>Mother</option>
@@ -831,10 +867,10 @@ trigger("phone");
                 { showhide2==="Other" && (
                 <div><tbody><tr>
                     <td>
-                       Type of Other Relationship:
+                       Type of Other Relationship(1):
                     </td>
                     <td>
-                    <input type="text" defaultValue={localdetails?.Type_relationship} placeholder="Uncle,Aunt,Local Guardian etc" id="Type_relationship" name="Type_relationship"></input><span className="astrix" >*</span>
+                    <input  type="text" defaultValue={localdetails?.Type_relationship} placeholder="Uncle,Aunt,Local Guardian etc" id="Type_relationship" name="Type_relationship"></input><span className="astrix" >*</span>
                 </td>
                 </tr>
                 </tbody></div>)}
@@ -851,7 +887,7 @@ trigger("phone");
 
 <td>
 
-<label className="col-form-label">Emergency Mobile Number:</label>
+<label className="col-form-label">Emergency Mobile Number(1):</label>
 
 </td>
 
@@ -904,6 +940,130 @@ trigger("emergencymobile");
 </tr>
 
 </tbody>
+
+<tbody><tr>
+                    <td>
+                       Emergency Contact Person(2):
+                    </td>
+                    <td>
+                    <input style={{width: "12em"}} type="text" defaultValue={localdetails?.emergency_contact_person2} placeholder="Name of the person" id="emergency_contact_person2" name="emergency_contact_person2"></input><span className="astrix" >*</span>
+                </td>
+                </tr>
+                </tbody>
+                <tbody><tr>
+                    <td>
+                       Relationship(2):
+                    </td>
+                    <td>
+                        <select style={{width: "12em"}} name="relationship2" value={localdetails?.relationship2} id="relationship2" onChange={(e)=>{handleshowhide2(e)}}>
+                        <option style={{color:"red"}}> {localdetails?.relationship2}</option>
+                        
+                        <option>Father</option>
+
+<option>Mother</option>
+
+<option>Uncle</option>
+
+<option>Aunt</option>
+
+<option>Sibling</option>
+
+<option>Spouse</option>
+
+<option>Friend</option>
+                </select><span className="astrix" >*</span>
+                </td>
+                </tr>
+                </tbody>
+                { showhide2==="Other" && (
+                <div><tbody><tr>
+                    <td>
+                       Type of Other Relationship(2):
+                    </td>
+                    <td>
+                    <input  type="text" defaultValue={localdetails?.Type_relationship2} placeholder="Uncle,Aunt,Local Guardian etc" id="Type_relationship2" name="Type_relationship2"></input><span className="astrix" >*</span>
+                </td>
+                </tr>
+                </tbody></div>)}
+                {/* <tbody><tr>
+                    <td>
+                      Emergency Contact Number:
+                    </td>
+                    <td>
+                    <input type="text" defaultValue={localdetails?.emergency_contact_number} placeholder="9471***" id="emergency_contact_number" name="emergency_contact_number"></input>
+                </td>
+                </tr>
+                </tbody> */}
+
+
+                
+                <tbody><tr>
+
+<td>
+
+<label className="col-form-label">Emergency Mobile Number(2):</label>
+
+</td>
+
+<td>  <input defaultValue={localdetails?.emergency_contact_number2} id="emergency_contact_number2" style={{width: "12em"}}
+
+type="text" placeholder="987675..."
+
+className={`form-control ${errors.emergencymobile2 && "invalid"}`}
+
+{...register("emergencymobile2", { required: "Required",
+
+maxLength:{
+
+value:10,
+
+message:"Invalid Mobile Number"
+
+},
+
+pattern: {
+
+value: /([6-9]){1}([0-9]){9}$/,
+
+message: "Invalid Mobile Number",
+
+},
+
+})}
+
+onKeyUp={() => {
+
+trigger("emergencymobile2");
+
+}}
+
+/><span className="astrix" >*</span>
+
+{errors.emergencymobile2 && (
+
+<small className="text-danger">{errors.emergencymobile2.message}</small>
+
+)}
+
+
+
+
+
+</td>
+
+</tr>
+
+</tbody>
+
+
+
+
+
+
+
+
+
+
                 <tbody><tr>
                     <td>
                     Are you a person  with disability:
@@ -911,7 +1071,7 @@ trigger("emergencymobile");
                     </td>
                     <td>
                     <select name="disability"  id="disability" onChange={(e)=>{handleshowhide(e)}}>
-                    <option style={{color:"red"}}>{localdetails?.disability}</option>
+                    <option style={{color:"red"}}> {localdetails?.disability}</option>
                     <option>Select</option>
                     <option>Yes</option>
                     <option>No</option>

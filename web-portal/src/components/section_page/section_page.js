@@ -40,12 +40,12 @@ const officedetails=()=>{
     return (
         <div> 
               <div className="box"><h2 >Section List</h2></div>
-              <div className="container">
-                <div><button type="submit" onClick={personaldetails}>Employee Personal Details</button></div><br></br><br></br><br></br>
-                <div><button type="submit" onClick={documentation}>Employee Documentation Details</button></div><br></br><br></br><br></br>
-                <div><button type="submit" onClick={education}>Employee Education Details</button></div><br></br><br></br><br></br>
-                <div><button type="submit" onClick={officedetails}>Office Details</button></div><br></br><br></br><br></br>
-                <div><button type="submit" onClick={previousemployment}>Employee Previous Employment Details</button></div><br></br><br></br><br></br></div>
+              <div className="container" style={{marginTop:"-1em",width:"91.3em"}}>
+                <div><button type="submit" onClick={personaldetails} style={{width:"22em"}}>Employee Personal Details</button></div><br></br><br></br><br></br>
+                <div><button type="submit" onClick={documentation} style={{width:"22em"}}>Employee Documentation Details</button></div><br></br><br></br><br></br>
+                <div><button type="submit" onClick={education} style={{width:"22em"}}>Employee Education Details</button></div><br></br><br></br><br></br>
+                <div><button type="submit" onClick={officedetails} style={{width:"22em"}}>Office Details</button></div><br></br><br></br><br></br>
+                <div><button type="submit" onClick={previousemployment} style={{width:"22em"}}>Employee Previous Employment Details</button></div><br></br><br></br><br></br></div>
                 
                 
                  </div>)}

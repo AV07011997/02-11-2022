@@ -15,6 +15,7 @@ import Sectionpage from './components/section_page/section_page';
 import Education from './components/education/education';
 import Previousemployment from './components/previousemployment/previousemployment';
 import Office from './components/officedetails/officedetails';
+import Review from './components/review/review';
 
 
 
@@ -64,6 +65,9 @@ function App() {
             
           </Route>
           <Route path="/officedetails/:employee_code" element={<Office setLoginUser={setLoginUser}/>}>
+            
+          </Route>
+          <Route path="/review/:employee_code" element={<Review setLoginUser={setLoginUser}/>}>
             
           </Route>
                  

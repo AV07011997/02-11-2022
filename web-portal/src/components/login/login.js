@@ -34,7 +34,8 @@ const Login = ({ setLoginUser}) => {
             alert(res.data.message)
             setLoginUser(res.data.user)
             localStorage.setItem('id',JSON.stringify(user))
-            navigate("/")}else{
+            navigate("/")
+        }else{
                 setLoginUser(null)
             }
         })
